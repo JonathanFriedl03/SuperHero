@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SuperHeroes.Models.SuperHero>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Super_Hero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alter_Ego)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Main_Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Secondary_Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catch_Phrase)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Super_Hero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alter_Ego)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Main_Power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Secondary_Power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catch_Phrase)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

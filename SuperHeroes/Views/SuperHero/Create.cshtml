@@ -1,0 +1,50 @@
+﻿@model SuperHeroes.Models.SuperHero
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SuperHero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Super_Hero" class="control-label"></label>
+                <input asp-for="Super_Hero" class="form-control" />
+                <span asp-validation-for="Super_Hero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alter_Ego" class="control-label"></label>
+                <input asp-for="Alter_Ego" class="form-control" />
+                <span asp-validation-for="Alter_Ego" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Main_Power" class="control-label"></label>
+                <input asp-for="Main_Power" class="form-control" />
+                <span asp-validation-for="Main_Power" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Secondary_Power" class="control-label"></label>
+                <input asp-for="Secondary_Power" class="form-control" />
+                <span asp-validation-for="Secondary_Power" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Catch_Phrase" class="control-label"></label>
+                <input asp-for="Catch_Phrase" class="form-control" />
+                <span asp-validation-for="Catch_Phrase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

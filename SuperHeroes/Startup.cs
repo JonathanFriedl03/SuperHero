@@ -62,7 +62,7 @@ namespace SuperHeroes
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");//index defines the default page it will go to first..to change this change index to page name
                 endpoints.MapRazorPages();
             });
         }

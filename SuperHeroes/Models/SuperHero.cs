@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperHeroes.Models
 {
-    public class SuperHeroes
+    public class SuperHero
     {
         [Key]//when KEY is red select using dataannotations
         public int Id { get; set; }

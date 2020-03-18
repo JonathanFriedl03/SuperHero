@@ -13,6 +13,6 @@ namespace SuperHeroes.Data
             : base(options)
         {
         }
-        public DbSet<Models.SuperHeroes> SuperHeroes { get; set; }//superhero wont be accesable w/o brining in using superheroes.models
+        public DbSet<Models.SuperHero> SuperHeroes { get; set; }//superhero wont be accesable w/o brining in using superheroes.models
     }
 }
