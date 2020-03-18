@@ -10,14 +10,14 @@ namespace SuperHeroes.Models
     {
         [Key]//when KEY is red select using dataannotations
         public int Id { get; set; }
-        [Required(ErrorMessage = "Suoer Hero is required.")]
+        //[Required(ErrorMessage = "Suoer Hero is required.")]
         public string Super_Hero { get; set; }
-        [Required(ErrorMessage = "Alter Ego is required.")]
+        //[Required(ErrorMessage = "Alter Ego is required.")]
         public string Alter_Ego { get; set; }
-        [Required(ErrorMessage = "Power is required.")]
+        //[Required(ErrorMessage = "Power is required.")]
         public string Main_Power { get; set; }
         public string Secondary_Power { get; set; }
-        [Required(ErrorMessage = "Catch Phrase is required.")]
+        //[Required(ErrorMessage = "Catch Phrase is required.")]
         public string Catch_Phrase { get; set; }
     }
 }
