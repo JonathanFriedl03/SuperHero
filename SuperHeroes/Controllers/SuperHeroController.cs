@@ -59,19 +59,20 @@ namespace SuperHeroes.Controllers
 
         // GET: SuperHero/Edit/5
         public ActionResult Edit(int id)
-        {
-            return View();
+        {            
+            return View(db.SuperHeroes.Find(id));
         }
 
         // POST: SuperHero/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, SuperHero superHero)
         {
             try
             {
-                // TODO: Add update logic here
-
+                // TODO: Add update logic here 
+                db.SuperHeroes.Update(superHero);
+                db.SaveChanges();               
                 return RedirectToAction(nameof(Index));
             }
             catch

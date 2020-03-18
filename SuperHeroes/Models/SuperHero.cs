@@ -11,7 +11,7 @@ namespace SuperHeroes.Models
         [Key]//when KEY is red select using dataannotations
         public int Id { get; set; }
         //[Required(ErrorMessage = "Suoer Hero is required.")]
-        public string Super_Hero { get; set; }
+        public string Name { get; set; }
         //[Required(ErrorMessage = "Alter Ego is required.")]
         public string Alter_Ego { get; set; }
         //[Required(ErrorMessage = "Power is required.")]
