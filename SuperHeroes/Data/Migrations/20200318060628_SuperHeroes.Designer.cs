@@ -10,8 +10,8 @@ using SuperHeroes.Data;
 namespace SuperHeroes.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200318044746_SuperHero")]
-    partial class SuperHero
+    [Migration("20200318060628_SuperHeroes")]
+    partial class SuperHeroes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -237,10 +237,10 @@ namespace SuperHeroes.Data.Migrations
                     b.Property<string>("Main_Power")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secondary_Power")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Super_Hero")
+                    b.Property<string>("Secondary_Power")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

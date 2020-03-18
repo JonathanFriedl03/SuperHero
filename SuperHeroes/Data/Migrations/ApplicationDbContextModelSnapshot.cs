@@ -235,10 +235,10 @@ namespace SuperHeroes.Data.Migrations
                     b.Property<string>("Main_Power")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secondary_Power")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Super_Hero")
+                    b.Property<string>("Secondary_Power")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

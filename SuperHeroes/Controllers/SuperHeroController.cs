@@ -43,7 +43,9 @@ namespace SuperHeroes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(SuperHero superHero)
         {
-            try
+            try//could also do an if statement using (ModelState.Isvalid)which is a dictionary thats stores user input 
+                    //isvalid relates to requirements initiated in the superhero cs which i commented out..theres more that can be done in view pg for error displaying
+                        //then do the following...cool to try as a turnary statement but not sure how
             {
                 // TODO: Add insert logic here
                db.SuperHeroes.Add(superHero);
@@ -59,8 +61,10 @@ namespace SuperHeroes.Controllers
 
         // GET: SuperHero/Edit/5
         public ActionResult Edit(int id)
-        {            
-            return View(db.SuperHeroes.Find(id));
+        {
+            //SuperHero superhero = db.SuperHeroes.Where(a => a.Id == id).FirstOrDefault();
+            //return View(superhero);
+                return View(db.SuperHeroes.Find(id));//find works with the primary key 
         }
 
         // POST: SuperHero/Edit/5
@@ -71,36 +75,37 @@ namespace SuperHeroes.Controllers
             try
             {
                 // TODO: Add update logic here 
-                db.SuperHeroes.Update(superHero);
-                db.SaveChanges();               
+                db.SuperHeroes.Update(superHero);//this is so cool compared to creating new instance searching then having to write out each property
+                db.SaveChanges();               //as cool that theyre the top options with dot notation
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Edit");
             }
         }
 
         // GET: SuperHero/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(db.SuperHeroes.Find(id));
         }
 
         // POST: SuperHero/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, SuperHero superHero)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                db.SuperHeroes.Remove(superHero);//and can use same logic as update
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Delete");
             }
         }
     }
