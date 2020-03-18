@@ -9,6 +9,7 @@ namespace SuperHeroes.Models
     public class SuperHero
     {
         [Key]//when KEY is red select using dataannotations
+        [Required(ErrorMessage = "Id is required.")]
         public int Id { get; set; }
         //[Required(ErrorMessage = "Suoer Hero is required.")]
         public string Name { get; set; }

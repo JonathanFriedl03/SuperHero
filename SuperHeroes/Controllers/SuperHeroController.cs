@@ -64,7 +64,8 @@ namespace SuperHeroes.Controllers
         {
             //SuperHero superhero = db.SuperHeroes.Where(a => a.Id == id).FirstOrDefault();
             //return View(superhero);
-                return View(db.SuperHeroes.Find(id));//find works with the primary key 
+                
+            return View(db.SuperHeroes.Find(id));//find works with the primary key 
         }
 
         // POST: SuperHero/Edit/5
@@ -81,7 +82,7 @@ namespace SuperHeroes.Controllers
             }
             catch
             {
-                return View("Edit");
+                return View();
             }
         }
 
